@@ -35,10 +35,7 @@ public class SecurityConfiguration {
                                 //authenticated(): This method specifies that any request matching the patterns
                                 // defined above should be authenticated, meaning only authenticated users
                                 // will be allowed to access those endpoints.
-                                .requestMatchers("/api/books/secure/**",
-                                        "/api/reviews/secure/**",
-                                        "/api/messages/secure/**",
-                                        "/api/admin/secure/**")
+                                .requestMatchers(" /api/admin/secure/**")
                                 .authenticated())// anyone with valid OAuth2 tokens can access
                 .oauth2ResourceServer((oauth2) -> oauth2
                         .jwt(Customizer.withDefaults()) // expecting a JWT token
